@@ -1,0 +1,20 @@
+{
+  "name": "Viewer",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Sumi Minano <sumi.minano@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/minanon/viewer",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "^15.3.2"
+  }
+}

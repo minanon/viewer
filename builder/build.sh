@@ -4,10 +4,7 @@
 builderdir=$(cd $(dirname ${0}); pwd)
 appdir=$(dirname ${builderdir})
 
-# setup build environment
-cd ${builderdir}
-npm install
-PATH+=:./node_modules/.bin
+${builderdir}/setup.sh
 
 # settings
 electron_version=$(electron --version | sed -e 's/^v//')

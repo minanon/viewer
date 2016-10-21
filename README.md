@@ -6,6 +6,7 @@ cd builder
 npm install
 PATH+=:$(npm bin)
 cd ../src
+electron .
 
 ## Build Package
 
