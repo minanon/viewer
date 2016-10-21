@@ -1,0 +1,11 @@
+{
+  "name": "Viewer-Builder",
+  "version": "0.1.0",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "electron-packager": "^8.1.0",
+    "electron-prebuilt": "^1.4.4"
+  }
+}
