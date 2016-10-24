@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+    <script src="../bower_components/riot/riot+compiler.js"></script>
+    <script src="./todo.html" type="riot/tag"></script>
   </head>
   <body>
     <h1>Hello World!</h1>
@@ -11,15 +13,19 @@
       <li>Chromium: <script>document.write(process.versions.chrome)</script></li>
       <li>Electron: <script>document.write(process.versions.electron)</script></li>
     </ul>
+    <todo></todo>
     <script>
-    var fs = require('fs');
-    fs.readdir('.', function(err, files){
-      if (err) throw err;
-      files.forEach(function (file) {
-        document.write(file);
-        document.write('<br>');
-      });
-    })
+    //var fs = require('fs');
+    //fs.readdir('.', function(err, files){
+    //  if (err) throw err;
+    //  files.forEach(function (file) {
+    //    document.write(file);
+    //    document.write('<br>');
+    //  });
+    //})
     </script>
   </body>
+  <script>
+    riot.mount('todo');
+  </script>
 </html>
