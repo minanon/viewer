@@ -4,10 +4,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/main.js",
+  "config": {
+    "exec_env": "export PATH=./build/node_modules/.bin:$PATH;"
+  },
   "scripts": {
-    "setup": "bower install"
+    "preinstall": "cd build/ && npm install",
+    "postinstall": "eval $npm_package_config_exec_env bower install",
+    "build": "cd build/ && npm run build",
+    "clean": "cd build/ && npm run clean",
+    "app": "eval $npm_package_config_exec_env electron ."
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "electron-json-storage": "^2.0.2"
+  }
 }

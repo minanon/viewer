@@ -1,0 +1,23 @@
+{
+  "name": "Builder",
+  "version": "0.1.0",
+  "author": "",
+  "license": "ISC",
+  "description": "separate build libs and execute Build tasks for this application",
+  "config": {
+    "build_platform": "linux",
+    "build_arch": "x64",
+    "build_ignore": "(releases|build)",
+    "build_release_dir": "../releases"
+  },
+  "scripts": {
+    "build": "mkdir -pv $npm_package_config_build_release_dir && cd $npm_package_config_build_release_dir && electron-packager ../ --platform=$npm_package_config_platform --arch=$npm_package_config_build_arch ${npm_package_config_build_ignore:+--ignore=$npm_package_config_build_ignore} --version=$(electron --version | sed -e 's/v//')",
+    "clean": "rm -rf $npm_package_config_build_release_dir/*"
+  },
+  "dependencies": {
+    "asar": "^0.12.3",
+    "bower": "^1.7.9",
+    "electron-packager": "^8.1.0",
+    "electron-prebuilt": "^1.4.4"
+  }
+}
