@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
-    <script src="../../../bower_components/riot/riot+compiler.js"></script>
-    <script src="../components/todo.html" type="riot/tag"></script>
+    <script src="../../bower_components/riot/riot+compiler.js"></script>
+    <script src="todo.html" type="riot/tag"></script>
   </head>
   <body>
     <h1>Hello World!</h1>
@@ -15,6 +15,24 @@
     </ul>
     <todo></todo>
     <script>
+    var glob = require('glob');
+    var g = new glob.Glob('*', function(err, result) {
+      if (err) {
+        // エラーが発生した場合、すぐに .abort() メソッドで残りのglobを中止させる
+        g.abort();
+
+        // エラーオブジェクトに対する何らかの処理
+        console.warn(err);
+
+        return;
+      }
+
+      // globが成功した際の処理
+      // 第二引数はマッチしたファイルパスの配列
+      console.log(result);
+
+      result; //=> ['path/to/files/a.txt', 'path/to/files/b/c.txt', ... ]
+    });
     //var fs = require('fs');
     //fs.readdir('.', function(err, files){
     //  if (err) throw err;
